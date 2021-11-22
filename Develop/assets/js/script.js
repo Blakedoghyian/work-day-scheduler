@@ -50,9 +50,11 @@ function onSiteLoaded() {
 function saveTask() {
     localStorage.setItem($(this).attr("id"), $(this).prev().val());
 
+    $(this).prev().transfer( {
+        to: $( $(this) ),
+    } );
 };
-
-$(".saveBtn").on("click", saveTask);
 
 onSiteLoaded();
 
+$(".saveBtn").on("click", saveTask);
